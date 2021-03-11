@@ -88,26 +88,22 @@ main {
   padding: 30px 20px;
   background-color: rgba(255, 255, 255, 0.9);
 }
-
 .loader {
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 25px 0;
 }
-
 .loader img {
   display: block;
   height: 60px;
   width: 60px;
 }
-
 #food-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 #food-form input,
 #food-form select {
   width: 100%;
@@ -121,7 +117,6 @@ main {
   border: solid 1px #ccc;
   border-radius: 0;
 }
-
 #food-form select {
   background-image: url("../img/arrow.png");
   background-size: 13px;
@@ -149,41 +144,38 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 #food-form button:hover {
   opacity: 0.8;
 }
-
 #food-form button:disabled {
   opacity: 0.5;
-  cursor: default;
+  cursor: not-allowed;
 }
-
 #recipes {
   display: flex;
   flex-wrap: wrap;
 }
-
+#recipes > p {
+  text-align: center;
+  width: 100%;
+}
 .recipe-element {
   position: relative;
   width: 22%;
   margin-right: 4%;
   margin-bottom: 20px;
+  cursor: pointer;
 }
-
 .recipe-element h3 {
   font-size: 15px;
 }
-
 .recipe-element:nth-child(4n) {
   margin-right: 0;
 }
-
 .recipe-element img {
   display: block;
   max-width: 100%;
 }
-
 .recipe-element .calories {
   position: absolute;
   display: flex;
@@ -199,12 +191,10 @@ main {
   font-size: 12px;
   text-align: center;
 }
-
 .recipe-element .labels {
   display: flex;
   flex-wrap: wrap;
 }
-
 .recipe-element .labels .label {
   margin-right: 5px;
   margin-bottom: 5px;
@@ -242,24 +232,20 @@ main {
   background-color: orange;
   cursor: not-allowed;
 }
-/* active     background: #f7cb77; */
-/* PLACEHOLDER STYLE */
 
+/* PLACEHOLDER STYLE */
 *::-webkit-input-placeholder {
   text-transform: uppercase;
   color: #ccc;
 }
-
 *::-moz-placeholder {
   text-transform: uppercase;
   color: #ccc;
 }
-
 *:-ms-input-placeholder {
   text-transform: uppercase;
   color: #ccc;
 }
-
 *:-moz-placeholder {
   text-transform: uppercase;
   color: #ccc;

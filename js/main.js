@@ -83,22 +83,30 @@ function createContent(data) {
   allResults.textContent = data.count;
 
   recipesSection.innerHTML = "";
-  data.hits.forEach(function (article) {
-    createRecipe(article);
-  });
+  if (!data.count) {
+    recipesSection.append(
+      createEl("p", "No search results found. Please try again", "notFound")
+    );
+  } else {
+    data.hits.forEach(function (article) {
+      createRecipe(article);
+    });
 
-  createPagination(data);
+    createPagination(data);
+  }
 }
 
 function createRecipe(article) {
   var recipeDiv = createEl("article", "", "recipe-element");
-
-  recipeDiv.append(createEl("img", article.recipe.image));
-  recipeDiv.append(createEl("h3", article.recipe.label));
-  recipeDiv.append(
-    createEl("p", Math.round(article.recipe.calories) + " kcal", "calories")
+  recipeDiv.addEventListener("click", function () {
+    window.open(article.recipe.url, "_blank");
+  });
+  recipeDiv.prepend(
+    createEl("img", article.recipe.image),
+    createEl("h3", article.recipe.label),
+    createEl("p", Math.round(article.recipe.calories) + " kcal", "calories"),
+    getLabels(article.recipe.healthLabels)
   );
-  recipeDiv.append(getLabels(article.recipe.healthLabels));
   recipesSection.append(recipeDiv);
 }
 
