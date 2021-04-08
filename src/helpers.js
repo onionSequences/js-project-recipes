@@ -1,3 +1,5 @@
+import noImage from "./img/no-img-available.jpg";
+
 const createEl = (type, path, cssClass) => {
   const element = document.createElement(type);
 
@@ -5,7 +7,7 @@ const createEl = (type, path, cssClass) => {
     element.setAttribute("src", path);
     // Handle if server response with broken img url
     element.onerror = () => {
-      element.setAttribute("src", "./img/no-img-available.jpg");
+      element.setAttribute("src", noImage);
     };
   } else {
     element.textContent = path;
