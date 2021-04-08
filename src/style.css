@@ -6,7 +6,7 @@ body {
   color: #666;
   font-family: Helvetica, serif;
   font-size: 16px;
-  background-image: url("../img/background.jpg");
+  background-image: url("./img/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -118,7 +118,7 @@ main {
   border-radius: 0;
 }
 #food-form select {
-  background-image: url("../img/arrow.png");
+  background-image: url("./img/arrow.png");
   background-size: 13px;
   background-repeat: no-repeat;
   background-position: right 15px center;
